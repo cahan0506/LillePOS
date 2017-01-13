@@ -113,8 +113,8 @@ void ClosedTickets::itemClicked(QTreeWidgetItem * item, int column)
   else
     return;
 
-  if ( QMessageBox::question(this, tr("Zahlart ändern"),
-                             tr("Wollen sie die Zahlart wirklich auf '%1' ändern?")
+  if ( QMessageBox::question(this, tr("Zahlart Ã¤ndern"),
+                             tr("Wollen sie die Zahlart wirklich auf '%1' Ã¤ndern?")
                                 .arg(MainWidget::getPayedByText(payedBy)),
                              QMessageBox::Yes, QMessageBox::No) == QMessageBox::No )
     return;

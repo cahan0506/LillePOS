@@ -45,7 +45,7 @@ CategoriesWidget::CategoriesWidget(QWidget *parent)
   ui.tableView->setModel(model);
   ui.tableView->setSortingEnabled(true);
   ui.tableView->setColumnHidden(model->fieldIndex("id"), true);
-  ui.tableView->horizontalHeader()->setResizeMode(1, QHeaderView::Stretch);
+  ui.tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
   ui.tableView->resizeRowsToContents();
 }
 
@@ -68,16 +68,16 @@ void CategoriesWidget::minusSlot()
   if ( row == -1 )
     return;
 
-  if ( QMessageBox::question(this, tr("Kategorie löschen"),
-         tr("Möchten sie die Kategorie '%1' wirklich löschen ?")
+  if ( QMessageBox::question(this, tr("Kategorie lÃ¶schen"),
+         tr("MÃ¶chten sie die Kategorie '%1' wirklich lÃ¶schen ?")
             .arg(model->data(model->index(row, 1)).toString()),
          QMessageBox::Yes, QMessageBox::No) == QMessageBox::No )
     return;
 
   if ( !model->removeRow(row) )
   {
-    QMessageBox::information(this, tr("Löschen nicht möglich"),
-        tr("Kategorie '%1' kann nicht gelöscht werden, da sie noch in Verwendung ist")
+    QMessageBox::information(this, tr("LÃ¶schen nicht mÃ¶glich"),
+        tr("Kategorie '%1' kann nicht gelÃ¶scht werden, da sie noch in Verwendung ist")
            .arg(model->data(model->index(row, 1)).toString()));
   }
   ui.tableView->resizeRowsToContents();

@@ -85,8 +85,8 @@ OpenTicketWidget::OpenTicketWidget(QWidget *parent, int theId, int theTable)
 
   ticketTree->header()->setStretchLastSection(false);
   //ticketTree->header()->setResizeMode(0, QHeaderView::ResizeToContents);
-  ticketTree->header()->setResizeMode(1, QHeaderView::Stretch);
-  ticketTree->header()->setResizeMode(2, QHeaderView::ResizeToContents);
+  ticketTree->header()->setSectionResizeMode(1, QHeaderView::Stretch);
+  ticketTree->header()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
   ticketTree->header()->resizeSection(0, 33);
   ticketTree->setRootIsDecorated(false);
   ticketTree->setSelectionMode(QAbstractItemView::NoSelection);

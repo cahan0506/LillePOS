@@ -53,7 +53,7 @@ ProductsWidget::ProductsWidget(QWidget *parent)
   ui.tableView->setModel(model);
   ui.tableView->setSortingEnabled(true);
   ui.tableView->setColumnHidden(model->fieldIndex("id"), true);
-  ui.tableView->horizontalHeader()->setResizeMode(model->fieldIndex("name"), QHeaderView::Stretch);
+  ui.tableView->horizontalHeader()->setSectionResizeMode(model->fieldIndex("name"), QHeaderView::Stretch);
   ui.tableView->resizeColumnToContents(model->fieldIndex("visible"));
   ui.tableView->resizeColumnToContents(model->fieldIndex("tax"));
   ui.tableView->resizeColumnToContents(3);  // related groups-name
@@ -82,16 +82,16 @@ void ProductsWidget::minusSlot()
   if ( row == -1 )
     return;
 
-  if ( QMessageBox::question(this, tr("Produkt löschen"),
-         tr("Möchten sie das Produkt '%1' wirklich löschen ?")
+  if ( QMessageBox::question(this, tr("Produkt lÃ¶schen"),
+         tr("MÃ¶chten sie das Produkt '%1' wirklich lÃ¶schen ?")
             .arg(model->data(model->index(row, 1)).toString()),
          QMessageBox::Yes, QMessageBox::No) == QMessageBox::No )
     return;
 
   if ( !model->removeRow(row) )
   {
-    QMessageBox::information(this, tr("Löschen nicht möglich"),
-        tr("Produkt '%1' kann nicht gelöscht werden, da es schon in Verwendung ist")
+    QMessageBox::information(this, tr("LÃ¶schen nicht mÃ¶glich"),
+        tr("Produkt '%1' kann nicht gelÃ¶scht werden, da es schon in Verwendung ist")
            .arg(model->data(model->index(row, 1)).toString()));
   }
 }

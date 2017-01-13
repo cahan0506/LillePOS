@@ -46,7 +46,7 @@ EmployeesWidget::EmployeesWidget(QWidget *parent)
   ui.tableView->setSortingEnabled(true);
   ui.tableView->setColumnHidden(model->fieldIndex("id"), true);
   ui.tableView->setColumnHidden(model->fieldIndex("start"), true);
-  ui.tableView->horizontalHeader()->setResizeMode(1, QHeaderView::Stretch);
+  ui.tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
   ui.tableView->resizeRowsToContents();
 }
 
@@ -70,16 +70,16 @@ void EmployeesWidget::minusSlot()
   if ( row == -1 )
     return;
 
-  if ( QMessageBox::question(this, tr("Mitarbeiter löschen"),
-         tr("Möchten sie den Mitarbeiter '%1' wirklich löschen ?")
+  if ( QMessageBox::question(this, tr("Mitarbeiter lÃ¶schen"),
+         tr("MÃ¶chten sie den Mitarbeiter '%1' wirklich lÃ¶schen ?")
             .arg(model->data(model->index(row, 1)).toString()),
          QMessageBox::Yes, QMessageBox::No) == QMessageBox::No )
     return;
 
   if ( !model->removeRow(row) )
   {
-    QMessageBox::information(this, tr("Löschen nicht möglich"),
-        tr("Mitarbeiter '%1' kann nicht gelöscht werden, da er noch Arbeitszeiten eingetragen hat")
+    QMessageBox::information(this, tr("LÃ¶schen nicht mÃ¶glich"),
+        tr("Mitarbeiter '%1' kann nicht gelÃ¶scht werden, da er noch Arbeitszeiten eingetragen hat")
            .arg(model->data(model->index(row, 1)).toString()));
   }
   ui.tableView->resizeRowsToContents();

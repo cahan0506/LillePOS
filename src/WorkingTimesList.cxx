@@ -73,7 +73,7 @@ WorkingTimesList::WorkingTimesList(QWidget *parent, int employeeId)
   ui.tableView->setModel(model);
   ui.tableView->setColumnHidden(0, true);  // ID
   ui.tableView->sortByColumn(1, Qt::AscendingOrder);
-  ui.tableView->horizontalHeader()->setResizeMode(2, QHeaderView::Stretch);
+  ui.tableView->horizontalHeader()->setSectionResizeMode(2, QHeaderView::Stretch);
   ui.tableView->resizeColumnToContents(1);
   ui.tableView->resizeColumnToContents(2);
   ui.tableView->resizeRowsToContents();
@@ -103,8 +103,8 @@ void WorkingTimesList::minusSlot()
   if ( row == -1 )
     return;
 
-  if ( QMessageBox::question(this, tr("Zeile löschen"),
-         tr("Möchten sie die Zeile '%1' wirklich löschen ?").arg(row+1),
+  if ( QMessageBox::question(this, tr("Zeile lÃ¶schen"),
+         tr("MÃ¶chten sie die Zeile '%1' wirklich lÃ¶schen ?").arg(row+1),
          QMessageBox::Yes, QMessageBox::No) == QMessageBox::No )
     return;
 

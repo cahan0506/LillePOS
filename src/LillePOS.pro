@@ -2,6 +2,8 @@ TARGET = LillePOS
 
 QT += sql
 QT += network
+QT += widgets
+QT += printsupport
 
 SOURCES += main.cxx
 SOURCES += MainWidget.cxx
@@ -79,22 +81,22 @@ FORMS += Backup.ui
 
 RESOURCES += LillePOS.qrc
 
-target.path = /usr/bin
+# target.path = /usr/bin
 INSTALLS += target
 
 # rules copied from Qt4 translations .pro file
 TRANSLATIONS += LillePOS_en.ts
 
-translations.path = /usr/share/LillePOS
+# translations.path = /usr/share/LillePOS
 translations.files = $$TRANSLATIONS
-translations.files ~= s,\\.ts$,.qm,g
+# translations.files ~= s,\\.ts$,.qm,g
 translations.CONFIG += no_check_exist
 INSTALLS += translations
 
-icon.path = /usr/share/pixmaps
-icon.files = LillePOS.png
-INSTALLS += icon
+#icon.path = /usr/share/pixmaps
+#icon.files = LillePOS.png
+#INSTALLS += icon
 
-desktop.path = /usr/share/applications
-desktop.files = LillePOS.desktop
-INSTALLS += desktop
+#desktop.path = /usr/share/applications
+#desktop.files = LillePOS.desktop
+#INSTALLS += desktop

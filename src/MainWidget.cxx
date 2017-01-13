@@ -593,7 +593,7 @@ void MainWidget::voidTicket()
   if ( ticket == 0 )
     return;
 
-  if ( QMessageBox::question(this, tr("Bon löschen"), tr("Möchten sie diesen Bon wirklich löschen ?"),
+  if ( QMessageBox::question(this, tr("Bon lÃ¶schen"), tr("MÃ¶chten sie diesen Bon wirklich lÃ¶schen ?"),
                              QMessageBox::Yes, QMessageBox::No) == QMessageBox::No )
     return;
 
@@ -715,7 +715,7 @@ void MainWidget::payGroupTicket(QList<int> tickets)
     return;
 
   if ( QMessageBox::question(this, tr("Bons zusammenlegen"),
-                             tr("Möchten sie diese %1 Bons wirklich zusammenlegen ?").arg(tickets.count()),
+                             tr("MÃ¶chten sie diese %1 Bons wirklich zusammenlegen ?").arg(tickets.count()),
                              QMessageBox::Yes, QMessageBox::No) == QMessageBox::No )
     return;
 
@@ -1209,7 +1209,7 @@ void MainWidget::menuSlot()
 
 void MainWidget::exitSlot()
 {
-  if ( QMessageBox::question(this, tr("Beenden"), tr("Möchten sie wirklich beenden ?"),
+  if ( QMessageBox::question(this, tr("Beenden"), tr("MÃ¶chten sie wirklich beenden ?"),
                              QMessageBox::Yes, QMessageBox::No) == QMessageBox::Yes )
   {
     QApplication::exit();

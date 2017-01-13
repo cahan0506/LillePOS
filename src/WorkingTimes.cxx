@@ -67,7 +67,7 @@ WorkingTimes::WorkingTimes(QWidget *parent)
     hbox->setStretchFactor(b, 1);
 
     // button to change startTime for this employee
-    QPushButton *changeStart = new QPushButton(QIcon(":/icons/edit.png"), tr("Start\nändern"));
+    QPushButton *changeStart = new QPushButton(QIcon(":/icons/edit.png"), tr("Start\nÃ¤ndern"));
     changeStart->setFixedHeight(MIN_HEIGHT);
     changeStart->setIconSize(QSize(32, 32));
     hbox->addWidget(changeStart);

@@ -53,7 +53,7 @@ GroupsWidget::GroupsWidget(QWidget *parent)
   ui.tableView->setSortingEnabled(true);
   ui.tableView->setColumnHidden(model->fieldIndex("id"), true);
   ui.tableView->setColumnWidth(model->fieldIndex("name"), 250);
-  ui.tableView->horizontalHeader()->setResizeMode(3, QHeaderView::Stretch);
+  ui.tableView->horizontalHeader()->setSectionResizeMode(3, QHeaderView::Stretch);
   ui.tableView->resizeRowsToContents();
 }
 
@@ -83,8 +83,8 @@ void GroupsWidget::minusSlot()
   {
     if ( !model->removeRow(selectedRows[i]) )
     {
-      QMessageBox::information(this, tr("Löschen nicht möglich"),
-          tr("Gruppe %1 kann nicht gelöscht werden, da sie noch in Verwendung ist")
+      QMessageBox::information(this, tr("LÃ¶schen nicht mÃ¶glich"),
+          tr("Gruppe %1 kann nicht gelÃ¶scht werden, da sie noch in Verwendung ist")
              .arg(model->data(model->index(selectedRows[i], 1)).toString()));
     }
   }
@@ -93,16 +93,16 @@ void GroupsWidget::minusSlot()
   if ( row == -1 )
     return;
 
-  if ( QMessageBox::question(this, tr("Gruppe löschen"),
-         tr("Möchten sie die Gruppe '%1' wirklich löschen ?")
+  if ( QMessageBox::question(this, tr("Gruppe lÃ¶schen"),
+         tr("MÃ¶chten sie die Gruppe '%1' wirklich lÃ¶schen ?")
             .arg(model->data(model->index(row, 1)).toString()),
          QMessageBox::Yes, QMessageBox::No) == QMessageBox::No )
     return;
 
   if ( !model->removeRow(row) )
   {
-    QMessageBox::information(this, tr("Löschen nicht möglich"),
-        tr("Gruppe '%1' kann nicht gelöscht werden, da sie noch in Verwendung ist")
+    QMessageBox::information(this, tr("LÃ¶schen nicht mÃ¶glich"),
+        tr("Gruppe '%1' kann nicht gelÃ¶scht werden, da sie noch in Verwendung ist")
            .arg(model->data(model->index(row, 1)).toString()));
   }
 }
